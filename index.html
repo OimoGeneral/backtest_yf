@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Push Button Sound</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      font-size: 2rem;
+      padding: 1em 2em;
+    }
+  </style>
+</head>
+<body>
+  <button id="pushButton">PUSH</button>
+  <audio id="sound" src="Assets/sounds/beep.wav"></audio>
+  <script>
+    const button = document.getElementById('pushButton');
+    const sound = document.getElementById('sound');
+    button.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  </script>
+</body>
+</html>
